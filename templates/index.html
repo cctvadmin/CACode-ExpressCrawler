@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="../static/image/icon.ico" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cacode - access request</title>
+    <link rel="stylesheet" href="../static/css/cacode.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../static/flatui/css/flat-ui.min.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="http://www.cacode.ren" target="_blank">CACode</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">推荐 <span class="sr-only">(current)</span></a></li>
+                    <li>
+                        <a href="http://www.cacode.ren" target="_blank">cacode open api</a>
+                    </li>
+                    <li>
+                        <a href="/tutorial" target="_blank">使用教程</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="bg-sm margin-0 padding" pad="" pad-size="10px" bg-width="50%" sm-width="100%">
+        <div class="container">
+            <div class="padding border" pad="" pad-size="10px"
+                style="border: 1px rgba(161, 161, 161, 0.24) solid;margin-bottom: 30px;">
+                <div class="form-group has-feedback">
+                    <label class="control-label" for="links">放入链接(换行分割)</label>
+                    <textarea class="form-control" rows="10" id="links"></textarea>
+                </div>
+                <div class="form-group has-feedback">
+                    <label class="control-label" for="scripts">执行脚本(换行分割)</label>
+                    <textarea class="form-control" rows="10" id="scripts"></textarea>
+                </div>
+                <div class="form-group has-feedback">
+                    <label class="control-label" for="start_sleep">开始加载等待时间(根据网速自行匹配)</label>
+                    <input type="text" class="form-control" placeholder="默认2秒" id="start_sleep">
+                </div>
+                <div class="form-group has-feedback">
+                    <label class="control-label" for="sleep_second">脚本间隔时间(默认0)</label>
+                    <input type="text" class="form-control" placeholder="默认0秒" id="sleep_second">
+                </div>
+                <div class="form-group has-feedback">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <label for="suffix">保存的后缀：</label>
+                            <input type="text" class="form-control" placeholder="如：(xls)，默认txt" id="suffix">
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-success" id="start">先点我执行</button>
+                    <button type="button" class="btn btn-success" id="save">下面返回的数据发生改变后再点我保存</button>
+                    <p id="loading">加载中<i class="glyphicon glyphicon-adjust"></i></p>
+                </div>
+                <div>
+                    返回数据：
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <textarea class="form-control" rows="10" id="result"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    copyright ©2019-2025 cacode <a href="http://beian.miit.gov.cn/">粤ICP备：20009502号</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+<script src="../static/flatui/scripts/flat-ui.min.js"></script>
+<script src="../static/js/index.js"></script>
+<script src="../static/js/cacode.js"></script>
+
+</html>
