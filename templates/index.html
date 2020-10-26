@@ -3,12 +3,13 @@
 
 <head>
     <meta charset="utf-8">
-    <link rel="shortcut icon" href="../static/image/icon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ url_for('static',filename='/image/icon.ico') }}" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>cacode - access request</title>
-    <link rel="stylesheet" href="../static/css/cacode.css">
+    <title>CACode - Access Request</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='/css/cacode.css') }}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../static/flatui/css/flat-ui.min.css">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="{{ url_for('static',filename='/flatui/css/flat-ui.min.css') }}">
 </head>
 
 <body>
@@ -28,7 +29,7 @@
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="#">推荐 <span class="sr-only">(current)</span></a></li>
                     <li>
-                        <a href="http://www.cacode.ren" target="_blank">cacode open api</a>
+                        <a href="http://www.cacode.ren" target="_blank">CACode open api</a>
                     </li>
                     <li>
                         <a href="/tutorial" target="_blank">使用教程</a>
@@ -58,23 +59,14 @@
                     <input type="text" class="form-control" placeholder="默认0秒" id="sleep_second">
                 </div>
                 <div class="form-group has-feedback">
-                    <div class="form-group">
-                        <div class="input-group">
-                            <label for="suffix">保存的后缀：</label>
-                            <input type="text" class="form-control" placeholder="如：(xls)，默认txt" id="suffix">
-                        </div>
-                    </div>
                     <button type="button" class="btn btn-success" id="start">先点我执行</button>
                     <button type="button" class="btn btn-success" id="save">下面返回的数据发生改变后再点我保存</button>
-                    <p id="loading">加载中<i class="glyphicon glyphicon-adjust"></i></p>
+                    <button type="button" class="btn btn-success" id="cacelResult">清空结果</button>
+                    <p id="loading">看我转的多卖力<i class="fa fa-smile-o" aria-hidden="true"></i></p>
                 </div>
                 <div>
                     返回数据：
-                    <div class="panel panel-default">
-                        <div class="panel-body">
-                            <textarea class="form-control" rows="10" id="result"></textarea>
-                        </div>
-                    </div>
+                    <textarea class="form-control" rows="10" id="result"></textarea>
                 </div>
             </div>
             <div class="panel panel-default">
@@ -90,5 +82,10 @@
 <script src="../static/flatui/scripts/flat-ui.min.js"></script>
 <script src="../static/js/index.js"></script>
 <script src="../static/js/cacode.js"></script>
+<script>
+    $('#cacelResult').click(function () {
+        $('#result').val("")
+    })
+</script>
 
 </html>

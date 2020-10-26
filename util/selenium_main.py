@@ -25,7 +25,8 @@ def run_multiple(urls, js, sleep_second=0, start_sleep=1):
     browser = get_browser()
     result = []
     for url in urls:
-        re = run_one(url=url, js=js, br=browser, sleep_second=sleep_second, start_sleep=start_sleep)
+        re = run_one(url=url, js=js, br=browser,
+                     sleep_second=sleep_second, start_sleep=start_sleep)
         result.append(re)
     return result
 
