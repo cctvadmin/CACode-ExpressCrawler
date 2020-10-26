@@ -12,7 +12,6 @@ def tutorial():
 
 @app.route('/run', methods=['GET'])
 def run_method():
-    print(1)
     _data_links = request.args.get('links')
     _data_scripts = request.args.get('scripts')
     _start_sleep = request.args.get('start_sleep')
