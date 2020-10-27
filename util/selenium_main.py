@@ -2,6 +2,9 @@
 import time
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
+from concurrent.futures import ThreadPoolExecutor
+
+thread_pool = ThreadPoolExecutor(max_workers=10)
 
 
 def run_one(url, js, br=None, sleep_second=0, start_sleep=1):
@@ -22,6 +25,13 @@ def run_one(url, js, br=None, sleep_second=0, start_sleep=1):
 
 
 def run_multiple(urls, js, sleep_second=0, start_sleep=1):
+    """
+    all_task = [executor.submit(get_html, (url)) for url in urls]
+
+    for future in as_completed(all_task):
+        data = future.result()
+        print("in main: get page {}s success".format(data))
+    """
     browser = get_browser()
     result = []
     for url in urls:
