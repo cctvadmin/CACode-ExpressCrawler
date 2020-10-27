@@ -47,10 +47,9 @@ if __name__ == '__main__':
     # document.getElementsByClassName('info-card-item-value')[1].innerText 快递公司
     # document.getElementsByClassName('info-card-item-value')[2].innerText 预计送达时间
     # document.getElementsByClassName('lg-timeline-current')[0].innerText 第一条物流信息，包含送达状态、物流信息、物流更新日期
+    import test
     _result = run_multiple(
-        urls=[
-            "https://v.m.jd.com/landpage/orderShare.action?shareData=JaCDsAFFI%2BcQP%2FXcPrFQLZGmAo8jyoALOYuFp1oD6%2F4%3D&customerName=**%E4%BC%9F&sharePageType=2&utm_source=iosapp&utm_medium=appshare&utm_campaign=t_335139774&utm_term=CopyURL&ad_od=share",
-            "https://v.m.jd.com/landpage/orderShare.action?shareData=JaCDsAFFI%2BcQP%2FXcPrFQLWSf94MWw29B%2BKzTjFeXXsU%3D&customerName=**%E4%BC%9F&sharePageType=2&utm_source=iosapp&utm_medium=appshare&utm_campaign=t_335139774&utm_term=CopyURL&ad_od=share"],
+        urls=test.urls,
         js=[
             "document.getElementsByClassName('info-card-item-value')[0].innerText",
             "document.getElementsByClassName('info-card-item-value')[1].innerText",
